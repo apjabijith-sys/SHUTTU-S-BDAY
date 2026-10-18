@@ -22,10 +22,10 @@ export const App: React.FC = () => {
     return sessionStorage.getItem('shuttu_atelier_unlocked') === 'true';
   });
 
-  // Current Photo for Shuttu
+  // Current Photo for Shuttu (Permanently set to her portrait)
   const [photoUrl, setPhotoUrl] = useState<string>(() => {
     return (
-      localStorage.getItem('shuttu_photo_url') ||
+      localStorage.getItem('shuttu_photo_url_v2') ||
       '/images/shuttu_photo_editorial.jpg'
     );
   });
@@ -47,7 +47,7 @@ export const App: React.FC = () => {
 
   const handleSavePhoto = (newUrl: string) => {
     setPhotoUrl(newUrl);
-    localStorage.setItem('shuttu_photo_url', newUrl);
+    localStorage.setItem('shuttu_photo_url_v2', newUrl);
   };
 
   const scrollToScratchCard = () => {

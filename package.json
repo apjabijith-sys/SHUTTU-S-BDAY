@@ -2,6 +2,10 @@
   "name": "shuttu-birthday-atelier",
   "private": true,
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apjabijith-sys/SHUTTU-S-BDAY.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
