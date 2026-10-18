@@ -1,0 +1,286 @@
+/* ==========================================================================
+   SHUTTU • LUXURY FLORAL ATELIER & EDITORIAL DESIGN SYSTEM
+   Palette: Rich Burgundy #4A0E17, Soft Blush #F7D6D0, Crisp White #FFFFFF
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Relationship of Melodrame';
+  src: url('/fonts/relationship-of-melodrame.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-burgundy-950: #1a0307;
+  --color-burgundy-900: #2a050d;
+  --color-burgundy-850: #380812;
+  --color-burgundy-800: #4a0e17; /* Core theme color */
+  --color-burgundy-700: #5c141e;
+  --color-burgundy-600: #751b27;
+  --color-burgundy-500: #942534;
+
+  --color-blush-100: #fff0ed;
+  --color-blush-200: #f7d6d0; /* Core theme accent */
+  --color-blush-300: #e8b6ad;
+  --color-blush-400: #d4958a;
+
+  --color-white: #ffffff;
+  --color-cream: #faf5f2;
+  --color-muted: rgba(247, 214, 208, 0.7);
+  --color-border: rgba(247, 214, 208, 0.18);
+  --color-border-glow: rgba(247, 214, 208, 0.35);
+
+  --font-melodrame: 'Relationship of Melodrame', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Garamond, Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --glass-bg: rgba(56, 8, 18, 0.58);
+  --glass-border: rgba(247, 214, 208, 0.22);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --glass-blur: blur(20px);
+
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset & Smooth Scroll */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-burgundy-800);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 75% 20%, #601420 0%, #4a0e17 45%, #2a050d 100%);
+  color: var(--color-cream);
+  overflow-x: hidden;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-burgundy-900);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(247, 214, 208, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(247, 214, 208, 0.5);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-blush-200);
+  color: var(--color-burgundy-900);
+}
+
+/* Typography Utility */
+.font-melodrame {
+  font-family: var(--font-melodrame);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Subtle editorial label */
+.atelier-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-blush-200);
+  opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.atelier-label::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--color-blush-200);
+  opacity: 0.6;
+}
+
+/* High Contrast Serif Headline */
+.editorial-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  color: var(--color-white);
+}
+
+.editorial-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--glass-highlight);
+}
+
+.fluted-glass-overlay {
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 28px,
+      rgba(0, 0, 0, 0.15) 29px,
+      rgba(0, 0, 0, 0.25) 30px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 60px,
+      rgba(0, 0, 0, 0.25) 61px,
+      rgba(0, 0, 0, 0.35) 62px
+    );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Pill Buttons */
+.btn-pill-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--color-white);
+  color: var(--color-burgundy-900);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 13px 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pill-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 255, 255, 0.3);
+  background: #ffffff;
+}
+
+.btn-pill-white:active {
+  transform: translateY(0);
+}
+
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.btn-pill-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-blush-200);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.animate-shake {
+  animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+.animate-float {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(247, 214, 208, 0.2); }
+  50% { box-shadow: 0 0 35px rgba(247, 214, 208, 0.45); }
+}
+
+/* Marquee Ribbon */
+@keyframes marqueeScroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 24s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Layout Container */
+.atelier-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+@media (max-width: 768px) {
+  .atelier-container {
+    padding: 0 20px;
+  }
+}

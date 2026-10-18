@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production builds
+dist/
+dist-ssr/
+*.local
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Raw video assets and backup files exceeding GitHub 100MB limit
+files/
+public/videos/more_memories.mp4
+public/videos/IMG_1582.webm
+public/videos/IMG_1582_opt.webm
